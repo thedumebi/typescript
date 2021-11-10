@@ -57,12 +57,13 @@ function moveAnimal(animal) {
             break;
         case "horse":
             speed = animal.runningSpeed;
-            break;
-        default:
-            break;
     }
     console.log("Moving at speed: " + speed);
 }
 moveAnimal({ type: "bird", flyingSpeed: 10 });
 moveAnimal({ type: "horse", runningSpeed: 10 });
+var userInputElement = document.getElementById("user-input");
+if (userInputElement) {
+    userInputElement.value = "Hi There!";
+}
 //# sourceMappingURL=app.js.map

@@ -95,14 +95,25 @@ function moveAnimal(animal: Animal) {
       break;
     case "horse":
       speed = animal.runningSpeed;
-      break;
-
-    default:
-      break;
   }
-
   console.log("Moving at speed: " + speed);
 }
 
 moveAnimal({ type: "bird", flyingSpeed: 10 });
 moveAnimal({ type: "horse", runningSpeed: 10 });
+
+// const userInputElement = <HTMLInputElement>(
+//   document.getElementById("user-input")!
+// );
+// const userInputElement = document.getElementById(
+//   "user-input"
+// )! as HTMLInputElement;
+
+// userInputElement.value = "Hi There!";
+
+// if you don't want to use the exclamation mark
+const userInputElement = document.getElementById("user-input");
+
+if (userInputElement) {
+  (userInputElement as HTMLInputElement).value = "Hi There!";
+}
