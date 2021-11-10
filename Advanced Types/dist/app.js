@@ -35,7 +35,7 @@ var Truck = (function () {
         console.log("Driving a truck...");
     };
     Truck.prototype.loadCargo = function (amount) {
-        console.log("Loading cargo ..." + amount);
+        console.log("Loading cargo ... " + amount);
     };
     return Truck;
 }());

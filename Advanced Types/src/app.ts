@@ -8,7 +8,7 @@ type Employee = {
   startDate: Date;
 };
 
-// interface ElevatedEmployee extends Employee, Admin {}
+// interface ElevatedEmployee extends Admin, Employee{}
 
 type ElevatedEmployee = Admin & Employee;
 
@@ -56,7 +56,7 @@ class Truck {
   }
 
   loadCargo(amount: number) {
-    console.log("Loading cargo ..." + amount);
+    console.log("Loading cargo ... " + amount);
   }
 }
 
