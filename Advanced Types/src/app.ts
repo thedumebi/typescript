@@ -23,6 +23,10 @@ type Numberic = number | boolean;
 
 type Universal = Combinable & Numberic;
 
+function add(a: number, b: number): number;
+function add(a: string, b: string): string;
+function add(a: string, b: number): string;
+function add(a: number, b: string): string;
 function add(a: Combinable, b: Combinable) {
   if (typeof a === "string" || typeof b === "string") {
     return a.toString() + b.toString();
@@ -30,100 +34,103 @@ function add(a: Combinable, b: Combinable) {
   return a + b;
 }
 
-type UnknownEmployee = Employee | Admin;
+const result = add("Chiwuzoh", " Daniel");
+result.split(" ");
 
-function printEmployeeInformation(emp: UnknownEmployee) {
-  console.log("Name: " + emp.name);
-  if ("privileges" in emp) {
-    console.log("Privileges: " + emp.privileges);
-  }
-  if ("startDate" in emp) {
-    console.log("startDate: " + emp.startDate);
-  }
-}
+// type UnknownEmployee = Employee | Admin;
 
-printEmployeeInformation({ name: "DMB", startDate: new Date() });
+// function printEmployeeInformation(emp: UnknownEmployee) {
+//   console.log("Name: " + emp.name);
+//   if ("privileges" in emp) {
+//     console.log("Privileges: " + emp.privileges);
+//   }
+//   if ("startDate" in emp) {
+//     console.log("startDate: " + emp.startDate);
+//   }
+// }
 
-class Car {
-  drive() {
-    console.log("Driving...");
-  }
-}
+// printEmployeeInformation({ name: "DMB", startDate: new Date() });
 
-class Truck {
-  drive() {
-    console.log("Driving a truck...");
-  }
+// class Car {
+//   drive() {
+//     console.log("Driving...");
+//   }
+// }
 
-  loadCargo(amount: number) {
-    console.log("Loading cargo ... " + amount);
-  }
-}
+// class Truck {
+//   drive() {
+//     console.log("Driving a truck...");
+//   }
 
-type Vehicle = Car | Truck;
+//   loadCargo(amount: number) {
+//     console.log("Loading cargo ... " + amount);
+//   }
+// }
 
-const v1 = new Car();
-const v2 = new Truck();
+// type Vehicle = Car | Truck;
 
-function useVehicle(vehicle: Vehicle) {
-  vehicle.drive();
-  if (vehicle instanceof Truck) {
-    vehicle.loadCargo(1000);
-  }
-}
+// const v1 = new Car();
+// const v2 = new Truck();
 
-useVehicle(v1);
-useVehicle(v2);
+// function useVehicle(vehicle: Vehicle) {
+//   vehicle.drive();
+//   if (vehicle instanceof Truck) {
+//     vehicle.loadCargo(1000);
+//   }
+// }
 
-interface Bird {
-  type: "bird";
-  flyingSpeed: number;
-}
+// useVehicle(v1);
+// useVehicle(v2);
 
-interface Horse {
-  type: "horse";
-  runningSpeed: number;
-}
+// interface Bird {
+//   type: "bird";
+//   flyingSpeed: number;
+// }
 
-type Animal = Bird | Horse;
+// interface Horse {
+//   type: "horse";
+//   runningSpeed: number;
+// }
 
-function moveAnimal(animal: Animal) {
-  let speed;
-  switch (animal.type) {
-    case "bird":
-      speed = animal.flyingSpeed;
-      break;
-    case "horse":
-      speed = animal.runningSpeed;
-  }
-  console.log("Moving at speed: " + speed);
-}
+// type Animal = Bird | Horse;
 
-moveAnimal({ type: "bird", flyingSpeed: 10 });
-moveAnimal({ type: "horse", runningSpeed: 10 });
+// function moveAnimal(animal: Animal) {
+//   let speed;
+//   switch (animal.type) {
+//     case "bird":
+//       speed = animal.flyingSpeed;
+//       break;
+//     case "horse":
+//       speed = animal.runningSpeed;
+//   }
+//   console.log("Moving at speed: " + speed);
+// }
 
-// const userInputElement = <HTMLInputElement>(
-//   document.getElementById("user-input")!
-// );
-// const userInputElement = document.getElementById(
-//   "user-input"
-// )! as HTMLInputElement;
+// moveAnimal({ type: "bird", flyingSpeed: 10 });
+// moveAnimal({ type: "horse", runningSpeed: 10 });
 
-// userInputElement.value = "Hi There!";
+// // const userInputElement = <HTMLInputElement>(
+// //   document.getElementById("user-input")!
+// // );
+// // const userInputElement = document.getElementById(
+// //   "user-input"
+// // )! as HTMLInputElement;
 
-// if you don't want to use the exclamation mark
-const userInputElement = document.getElementById("user-input");
+// // userInputElement.value = "Hi There!";
 
-if (userInputElement) {
-  (userInputElement as HTMLInputElement).value = "Hi There!";
-}
+// // if you don't want to use the exclamation mark
+// const userInputElement = document.getElementById("user-input");
 
-interface ErrorContainer {
-  // { email: "Not a valid email", username: "Must start with a character" }
-  [prop: string]: string;
-}
+// if (userInputElement) {
+//   (userInputElement as HTMLInputElement).value = "Hi There!";
+// }
 
-const errorBag: ErrorContainer = {
-  email: "Not a valid email",
-  username: "Must start with a capital character",
-};
+// interface ErrorContainer {
+//   // { email: "Not a valid email", username: "Must start with a character" }
+//   [prop: string]: string;
+// }
+
+// const errorBag: ErrorContainer = {
+//   email: "Not a valid email",
+//   username: "Must start with a capital character",
+// };
