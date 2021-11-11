@@ -37,6 +37,20 @@ function add(a: Combinable, b: Combinable) {
 const result = add("Chiwuzoh", " Daniel");
 result.split(" ");
 
+const fetchedUserData = {
+  id: "u1",
+  name: "DMB",
+  job: { title: "CEO", description: "My own company" },
+};
+
+console.log(fetchedUserData?.job?.title);
+
+const userInput = "";
+
+const storedData = userInput ?? "DEFAULT";
+
+console.log(storedData);
+
 // type UnknownEmployee = Employee | Admin;
 
 // function printEmployeeInformation(emp: UnknownEmployee) {
