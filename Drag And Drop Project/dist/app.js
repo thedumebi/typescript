@@ -149,7 +149,7 @@ __decorate([
 ], ProjectItem.prototype, "dragEndHandler", null);
 class ProjectList extends Component {
     constructor(type) {
-        super("project-list", "app", false, `${type}-projects`);
+        super("project-list", "project-container", false, `${type}-projects`);
         this.type = type;
         this.assignedProjects = [];
         this.configure();

@@ -17,6 +17,13 @@ body {
   justify-content: center;
 }
 
+#project-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  align-items: start;
+}
+
 label,
 input,
 textarea {

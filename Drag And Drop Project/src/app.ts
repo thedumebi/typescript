@@ -233,7 +233,7 @@ class ProjectList
   assignedProjects: Project[];
 
   constructor(private type: "active" | "finished") {
-    super("project-list", "app", false, `${type}-projects`);
+    super("project-list", "project-container", false, `${type}-projects`);
     this.assignedProjects = [];
 
     this.configure();
