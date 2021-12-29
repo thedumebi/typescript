@@ -5,8 +5,8 @@ const addressInput = document.getElementById("address")! as HTMLInputElement;
 
 const GOOGLE_API_KEY = "AIzaSyBJa50jqbsetkdq_3gvjWgH23at-KkXGOk";
 
-// declare var google: any;
-declare var ol: any;
+// open layer map
+// declare var ol: any;
 
 type GoogleGeocodingResponse = {
   results: { geometry: { location: { lat: number; lng: number } } }[];
@@ -32,19 +32,19 @@ function searchAddressHandler(event: Event) {
       const coordinates = response.data.results[0].geometry.location;
 
       // using open layers map
-      document.getElementById("map")!.innerHTML = ""; //clear <p></p> from map
-      new ol.Map({
-        target: "map",
-        layers: [
-          new ol.layer.Tile({
-            source: new ol.source.OSM(),
-          }),
-        ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([coordinates.lng, coordinates.lat]),
-          zoom: 16,
-        }),
-      });
+      // document.getElementById("map")!.innerHTML = ""; //clear <p></p> from map
+      // new ol.Map({
+      //   target: "map",
+      //   layers: [
+      //     new ol.layer.Tile({
+      //       source: new ol.source.OSM(),
+      //     }),
+      //   ],
+      //   view: new ol.View({
+      //     center: ol.proj.fromLonLat([coordinates.lng, coordinates.lat]),
+      //     zoom: 16,
+      //   }),
+      // });
 
       // using google maps
       const map = new google.maps.Map(
