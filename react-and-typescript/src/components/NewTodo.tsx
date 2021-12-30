@@ -13,6 +13,7 @@ const NewTodo: React.FC<NewTodoProps> = (props) => {
     event.preventDefault();
     const enteredText = textInputRef.current!.value;
     props.onAddTodo(enteredText);
+    textInputRef.current!.value = ""
   };
 
   return (
